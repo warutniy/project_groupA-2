@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Layout from './Layout';
+import './style.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = function() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Layout>
+      <div className="wrapper">
+        <span className="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
 
-export default App
+        <div className="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div className="input-box">
+                    <span className="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required />
+                    <label>Email</label>
+                </div>
+                <div className="input-box">
+                    <span className="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required />
+                    <label>Password</label>
+                </div>
+                <div className="remember-forgot">
+                    <label><input type="checkbox" /> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" className="btn" >Login</button>
+                <div className="login-register">
+                    <p>Don't have an account? <a href="#" className="register-link" >Register</a></p>
+                </div>
+            </form>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default App;
