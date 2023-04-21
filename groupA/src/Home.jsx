@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from './Layout';
-import './style.css';
 
 const Home = function() {
   return (
