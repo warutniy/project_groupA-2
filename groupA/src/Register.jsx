@@ -7,7 +7,7 @@ const Register = function() {
     <Layout>
       <div className="wrapper">
         <span className="icon-close">
-            <ion-icon name="close"></ion-icon>
+            <a href='/'><ion-icon name="close"></ion-icon></a>
         </span>
 
         <div className="form-box register">
