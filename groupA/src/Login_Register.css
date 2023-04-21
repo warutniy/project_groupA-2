@@ -47,7 +47,7 @@ body {
     transform: translateX(400px);
 } */
 
-.wrapper .icon-close {
+.wrapper .icon-close a {
     position: absolute;
     top: 0;
     right: 0;
@@ -65,11 +65,11 @@ body {
     transition: scale 0.2 ease;
 }
 
-.wrapper .icon-close:hover {
+.wrapper .icon-close a:hover {
     scale: 1.05;
 }
 
-.wrapper .icon-close:active {
+.wrapper .icon-close a:active {
     scale: 0.95;
 }
 
