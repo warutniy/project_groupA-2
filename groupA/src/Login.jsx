@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './Layout';
 import './style.css';
 
-const App = function() {
+const Login = function() {
   return (
     <Layout>
       <div className="wrapper">
@@ -33,7 +33,7 @@ const App = function() {
                 </div>
                 <button type="submit" className="btn" >Login</button>
                 <div className="login-register">
-                    <p>Don't have an account? <a href="#" className="register-link" >Register</a></p>
+                    <p>Don't have an account? <a href="/register" className="register-link" >Register</a></p>
                 </div>
             </form>
         </div>
@@ -42,4 +42,4 @@ const App = function() {
   );
 };
 
-export default App;
+export default Login;
