@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Home from './Home';
 import Login from './Login.jsx';
 import Register from './Register.jsx';
+import CreateCard from './CreateCard';
 
 import {
   createBrowserRouter,
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: <Register />
+  },
+
+  {
+    path: '/create_card',
+    element: <CreateCard />
   }
 ])
 

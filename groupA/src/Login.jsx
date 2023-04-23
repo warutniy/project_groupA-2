@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './Layout';
-import './Login_Register.css';
+import './Login.css';
 
 const Login = function() {
   return (
