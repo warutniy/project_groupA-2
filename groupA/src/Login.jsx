@@ -5,7 +5,7 @@ import './Login_Register.css';
 const Login = function() {
   return (
     <Layout>
-      <div className="wrapper">
+      <div className="wrapper login">
         <span className="icon-close">
             <a href='/'><ion-icon name="close"></ion-icon></a>
         </span>
