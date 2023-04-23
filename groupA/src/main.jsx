@@ -8,6 +8,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import ActivityCard from './ActivityCard';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: <Register />
+  },
+
+  {
+    path: '/activity',
+    element: <ActivityCard />
   }
 ])
 
