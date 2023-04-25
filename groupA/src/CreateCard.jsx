@@ -20,23 +20,23 @@ const CreateCard = function() {
                             </div>
                             <div className="input-box">
                                 <span className="details">Activity Date</span>
-                                <input type="date" placeholder="" required />
+                                <input className="dateTime" type="date" placeholder="" required />
                             </div>
                             <div className="input-box message">
                                 <span className="details">Description</span>
-                                <textarea id="message" placeholder="Put your description here!!!" rows="5"></textarea>
+                                <textarea placeholder="Put your description here!!!" rows="5"></textarea>
                             </div>
                             <div className="input-box">
                                 <span className="details">Start-Time</span>
-                                <input type="time" placeholder="" required />
+                                <input className="dateTime" type="time" placeholder="" required />
                             </div>
                             <div className="input-box">
                                 <span className="details">Finish-Time</span>
-                                <input type="time" placeholder="" required />
+                                <input className="dateTime" type="time" placeholder="" required />
                             </div>
                             <div className="input-box">
                                 <span className="details">Activity Type</span>
-                                <select id="select_type" placeholder="" required >
+                                <select className="minimal" placeholder="" required >
                                     <option value="" > Please Select Item </option>
                                     <option value="run" >Run</option>
                                     <option value="bicycle_ride" >Bicycle Ride</option>
@@ -46,8 +46,8 @@ const CreateCard = function() {
                                 </select>
                             </div>
                             <div className="input-box">
-                                <span className="details">Duration Time</span>
-                                <input type="text" placeholder="Enter your duration time" required />
+                                <span className="details">Distance (km)</span>
+                                <input type="text" placeholder="Enter your distance" required />
                             </div>
                         </div>
                         <button type="submit" className="btn" >Create Card</button>
