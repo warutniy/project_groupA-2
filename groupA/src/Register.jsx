@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from './Layout';
-import './Login_Register.css';
+import './Register.css';
 
 const Register = function() {
   return (
     <Layout>
-      <div className="wrapper">
+      <div className="wrapper register">
         <span className="icon-close">
             <a href='/'><ion-icon name="close"></ion-icon></a>
         </span>
