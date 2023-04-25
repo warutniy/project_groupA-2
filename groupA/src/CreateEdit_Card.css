@@ -243,4 +243,8 @@ form .user-details .input-box.message {
         top: 50px;
         height: 550px;
     }
+
+    .form-box .title {
+        font-size: 1.35em;
+    }
 }

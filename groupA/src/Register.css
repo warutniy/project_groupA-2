@@ -183,3 +183,32 @@ body {
     text-decoration: underline;
     color: rgba(241, 86, 35, 1);
 }
+
+@media (max-width: 400px) {
+    
+    .wrapper.register {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .wrapper.login .form-box {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .wrapper.register .form-box h2 {
+        font-size: 1.8em;
+    }
+
+    .wrapper.register .input-box label {
+        font-size: 0.9em;
+    }
+
+    .wrapper.register .remember-forgot {
+        font-size: 0.8em;
+    }
+
+    .wrapper.register .login-register {
+        font-size: 0.8em;
+    }
+}

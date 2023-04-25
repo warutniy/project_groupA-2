@@ -20,6 +20,7 @@ body {
 /* Body Style */
 .wrapper.login {
     position: relative;
+    top: 40px;
     width: 400px;
     height: 470px;
     background: transparent;
@@ -181,4 +182,33 @@ body {
 .wrapper.login .login-register p a:hover {
     text-decoration: underline;
     color: rgba(241, 86, 35, 1);
+}
+
+@media (max-width: 400px) {
+    
+    .wrapper.login {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .wrapper.login .form-box {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .wrapper.login .form-box h2 {
+        font-size: 1.8em;
+    }
+
+    .wrapper.login .input-box label {
+        font-size: 0.9em;
+    }
+
+    .wrapper.login .remember-forgot {
+        font-size: 0.8em;
+    }
+
+    .wrapper.login .login-register {
+        font-size: 0.8em;
+    }
 }

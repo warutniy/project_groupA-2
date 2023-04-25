@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "./Layout";
 import './CreateEdit_Card.css';
 
-const CreateCard = function() {
+const EditCard = function() {
     return (
         <Layout>
             <div className="wrapper create_card">
@@ -11,7 +11,7 @@ const CreateCard = function() {
                 </span>
 
                 <div className="form-box"> {/*container*/}
-                    <div className="title">CREATE A NEW CARD</div>
+                    <div className="title">EDIT AN ACTIVITY CARD</div>
                     <form action="#">
                         <div className="user-details">
                             <div className="input-box">
@@ -50,7 +50,7 @@ const CreateCard = function() {
                                 <input type="text" placeholder="Enter your distance" required />
                             </div>
                         </div>
-                        <button type="submit" className="btn" >Create Card</button>
+                        <button type="submit" className="btn" >Edit Card</button>
                     </form>
                 </div>
             </div>
@@ -58,4 +58,4 @@ const CreateCard = function() {
     );
 };
 
-export default CreateCard;
+export default EditCard;
