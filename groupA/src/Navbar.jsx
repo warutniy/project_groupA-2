@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import './Navbar.css';
 import Logo from './assets/FITBOOK.png';
-import User from "./user";
 
 const toggles = [
     {
@@ -34,7 +33,8 @@ const [toggle, setToggle] = useState([{id:"menu", tag:<ion-icon name="menu-outli
                 <li><a href="#" >About</a></li>
                 <li><a href="#" >Services</a></li>
                 <li><a href="#" >Contact</a></li>
-                <li><a href="/User" >User</a></li>
+                <li><a href="/User_main" >User</a></li>
+                <li><a href="/ActivityCard" >ActivityCard</a></li>
                 <li><button className="btnLogin-popup"><a href="/login">Login</a></button></li>
             </ul>
             <div className="toggle_btn" onClick={handleClick} id="toggle_btn">

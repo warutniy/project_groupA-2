@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./User.css";
+import "./User_main.css";
 import Layout from "./Layout";
 
 const User_left = function () {

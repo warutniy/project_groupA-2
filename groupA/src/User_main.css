@@ -34,7 +34,7 @@
 
 
 .grid-right {
-    background-color: palevioletred;
+    /* background-color: palevioletred; */
     grid-row: 1;
     display: flex;
     flex-wrap: wrap;
@@ -43,14 +43,18 @@
     align-items: center;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    opacity: 50%;
+    /* opacity: 20%; */
     margin: 5px;
+    opacity: 0.8;
+    overflow-y: scroll;
 }
 
-.grid-right > p {
+/* .grid-right > div {
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
     border: 1px black;
-}
+} */
 
 .activity_card {
     flex-basis: calc(33.33% - 20px);
@@ -71,7 +75,7 @@
 .info_user {
     font-size: 0.8rem;
     text-align: center;
-    border-bottom: 0.5px solid #000;
+    border-bottom: 0.5pxs solid #000;
 }
 
 .stat_user {
