@@ -1,10 +1,10 @@
 import React from 'react';
-import Layout from './Layout';
-import './Register.css';
+import LayoutHome from './Layout_Home';
+import './assets/style/Register.css';
 
 const Register = function() {
   return (
-    <Layout>
+    <LayoutHome>
       <div className="wrapper register">
         <span className="icon-close">
             <a href='/'><ion-icon name="close"></ion-icon></a>
@@ -45,7 +45,7 @@ const Register = function() {
         </div>
       </div>
 
-    </Layout>
+    </LayoutHome>
   );
 };
 

@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "./Layout";
-import './CreateEdit_Card.css';
+import LayoutUser from "./Layout_User";
+import './assets/style/CreateEdit_Card.css';
 
 const CreateCard = function() {
     return (
-        <Layout>
+        <LayoutUser>
             <div className="wrapper create_card">
                 <span className="icon-close">
                     <a href='/'><ion-icon name="close"></ion-icon></a>
@@ -54,7 +54,7 @@ const CreateCard = function() {
                     </form>
                 </div>
             </div>
-        </Layout>
+        </LayoutUser>
     );
 };
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import Layout from './Layout';
-import './Login.css';
+import LayoutHome from './Layout_Home';
+import './assets/style/Login.css';
 
 const Login = function() {
   return (
-    <Layout>
+    <LayoutHome>
       <div className="wrapper login">
         <span className="icon-close">
             <a href='/'><ion-icon name="close"></ion-icon></a>
@@ -38,7 +38,7 @@ const Login = function() {
             </form>
         </div>
       </div>
-    </Layout>
+    </LayoutHome>
   );
 };
 
