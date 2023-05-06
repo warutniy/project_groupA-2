@@ -25,11 +25,6 @@ const router = createBrowserRouter([
     path: '/register',
     element: <Register />
   },
-
-  {
-    path: '/activity',
-    element: <ActivityCard />
-  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
