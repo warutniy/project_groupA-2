@@ -33,6 +33,7 @@ const [toggle, setToggle] = useState([{id:"menu", tag:<ion-icon name="menu-outli
                 <li><a href="#" >About</a></li>
                 <li><a href="#" >Services</a></li>
                 <li><a href="#" >Contact</a></li>
+                <li><a href="/User_main" >User</a></li>
                 <li><button className="btnLogin-popup"><a href="/login">Login</a></button></li>
             </ul>
             <div className="toggle_btn" onClick={handleClick} id="toggle_btn">
