@@ -12,9 +12,27 @@ const User_main = function() {
             <div className="grid-main">
                 <User_left/>
                 <div className="grid-right">
+                    <div className="activity_card">
                         <ActivityCard />
+                    </div>
+                    <div className="activity_card">
                         <ActivityCard />
+                    </div>
+                    <div className="activity_card">
                         <ActivityCard />
+                    </div>
+                    <div className="activity_card">
+                        <ActivityCard />
+                    </div>
+                    <div className="activity_card">
+                        <ActivityCard />
+                    </div>
+                    <div className="activity_card">
+                        <ActivityCard />
+                    </div>
+                    <div className="activity_card">
+                        <ActivityCard />
+                    </div>
                 </div>
             </div>
         </Layout>

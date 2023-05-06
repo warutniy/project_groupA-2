@@ -4,11 +4,11 @@ import Home from './Home';
 import Login from './Login.jsx';
 import Register from './Register.jsx';
 import User_main from './User_main.jsx';
-import ActivityCard from './ActivityCard';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import ActivityCard from './ActivityCard';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/ActivityCard',
+    path: '/activity',
     element: <ActivityCard />
   }
 ])
