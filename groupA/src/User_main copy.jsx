@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './User_main.css'
 import Layout from "./Layout";
-import User_left from "./User_left"; 
+import User_left from "./user_left"; 
 import ActivityCard from "./ActivityCard";
 import './ActivityCard.css';
 
