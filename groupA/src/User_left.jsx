@@ -35,8 +35,8 @@ const User_left = function () {
         />
       </div>
 
-      <p className="name_user">Name Name</p>
-      <p className="info_user">Age: 23 Weight: 60 kg Height: 178 cm</p>
+      <p className="name_user">Fullname Lastname</p>
+      <p className="info_user">Age: 23<br/> Weight: 60 kg<br/> Height: 178 cm</p> 
       <p className="stat_user">Goals & Stats</p>
       <div className="goals_user">
         <div className="activity_icons">
