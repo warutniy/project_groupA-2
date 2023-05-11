@@ -184,8 +184,16 @@ body {
     color: rgba(241, 86, 35, 1);
 }
 
-@media (max-width: 400px) {
-    
+/* =============== MEDIA QUERIES (MEDIUM DEVICES) =============== */
+@media screen and (max-width: 1024px) {
+    .wrapper.login {
+        width: 450px;
+        margin: 0 auto;
+    }
+}
+
+/* =============== MEDIA QUERIES (SMALL DEVICES) =============== */
+@media screen and (max-width: 600px) {
     .wrapper.login {
         width: 100%;
         margin: 0 auto;
