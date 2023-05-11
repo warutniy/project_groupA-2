@@ -26,31 +26,16 @@ const User_main = function() {
         <Layout username={username}>
             <div className="grid-main">
                 <User_left/>
-                <div className="grid-right">
-                    <div className="activity_card">
+                <div className="grid-middle">
+                    <div className="activity_btn">
                         <button className='create_btn'><a href='/create_card'>Create Card</a></button>
                     </div>
                     <div className="activity_card">
                         <ActivityCard />
                     </div>
-                    <div className="activity_card">
-                        <ActivityCard />
-                    </div>
-                    <div className="activity_card">
-                        <ActivityCard />
-                    </div>
-                    <div className="activity_card">
-                        <ActivityCard />
-                    </div>
-                    <div className="activity_card">
-                        <ActivityCard />
-                    </div>
-                    <div className="activity_card">
-                        <ActivityCard />
-                    </div>
-                    <div className="activity_card">
-                        <ActivityCard />
-                    </div>
+                </div>
+                <div className='grid-right' >
+                    <p>Put Graph Here!</p>
                 </div>
             </div>
         </Layout>

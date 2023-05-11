@@ -15,17 +15,65 @@ const ActivityCard = () => {
             date: '04/09/2023',
             duration: '00:53:41',
             distance: '4.0 KM'
+        },
+
+        {
+            id: 2,
+            activityName: 'Go Shopping',
+            username: 'John Doe',
+            description: 'Go to the Department Store for buying new shirts and new shoes in order to use for a new job on Monday.',
+            image: walkImage,
+            activityType: 'Walk',
+            date: '04/09/2023',
+            duration: '00:53:41',
+            distance: '4.0 KM'
+        },
+
+        {
+            id: 3,
+            activityName: 'Go Shopping',
+            username: 'John Doe',
+            description: 'Go to the Department Store for buying new shirts and new shoes in order to use for a new job on Monday.',
+            image: walkImage,
+            activityType: 'Walk',
+            date: '04/09/2023',
+            duration: '00:53:41',
+            distance: '4.0 KM'
+        },
+
+        {
+            id: 4,
+            activityName: 'Go Shopping',
+            username: 'John Doe',
+            description: 'Go to the Department Store for buying new shirts and new shoes in order to use for a new job on Monday.',
+            image: walkImage,
+            activityType: 'Walk',
+            date: '04/09/2023',
+            duration: '00:53:41',
+            distance: '4.0 KM'
+        },
+
+        {
+            id: 5,
+            activityName: 'Go Shopping',
+            username: 'John Doe',
+            description: 'Go to the Department Store for buying new shirts and new shoes in order to use for a new job on Monday.',
+            image: walkImage,
+            activityType: 'Walk',
+            date: '04/09/2023',
+            duration: '00:53:41',
+            distance: '4.0 KM'
         }
     ]
 
     const [card, setCard] = useState(activity);
 
     return (
-        <div>
+        <div className='activities_card'>
             {card.map((item) => (
                 <div className='activity-card' key={item.id}>
                     <div className='header'>
-                        <h2 className='activity-name'>{item.activityName}</h2>
+                        <h2 className='activity-name'>{item.username}</h2>
                         <span className="icon">
                             <a href='/edit_card'><ion-icon color="primary" size="large" name="create-outline"></ion-icon></a>
                             <ion-icon color="danger" size="large" name="trash-outline"></ion-icon>
@@ -33,7 +81,7 @@ const ActivityCard = () => {
                     </div>
                     
                     <div className='activity-card-detail'>
-                        <p className='name'>{item.username}</p>
+                        <p className='name'>{item.activityName}</p>
                         <hr /><br />
                         <label className='description'>{item.description}</label>
                         

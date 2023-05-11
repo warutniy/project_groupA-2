@@ -62,7 +62,7 @@ const CreateCard = function() {
                             </div>
                             <div className="input-box">
                                 <span className="details">Distance (km)</span>
-                                <input type="text" placeholder="Enter your distance" required />
+                                <input type="number" placeholder="Enter your distance" required />
                             </div>
                         </div>
                         <button type="submit" className="btn" >Create Card</button>
