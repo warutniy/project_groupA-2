@@ -90,20 +90,20 @@ const ActivityCard = () => {
                                 <img className='activity-image' src={item.image} />
                                 <p className='activity-type'>{item.activityType}</p>
                             </div>
-                            <div className='activity-right-tab'>
-                                <div className='detail'>
+                            {/* <div className='activity-right-tab'> */}
+                                <div className='activity-right-tab detail'>
                                     <p>Date</p>
                                     <span>{item.date}</span>
                                 </div>
-                                <div className='detail'>
+                                <div className='activity-right-tab detail'>
                                     <p>Duration</p>
                                     <span>{item.duration}</span>
                                 </div>
-                                <div className='detail'>
+                                <div className='activity-right-tab detail'>
                                     <p>Distance</p>
                                     <span>{item.distance}</span>
                                 </div>
-                            </div>
+                            {/* </div> */}
                         </div>
                         <hr />
                     </div>

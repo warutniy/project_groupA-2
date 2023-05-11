@@ -53,49 +53,45 @@
 
 .activity-tab {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     margin: 15px 0;
-    padding-right: 30px;
-    padding-left: 10px;
+    /* padding-right: 30px;
+    padding-left: 10px; */
     /* border: 1px solid red; */
 }
 
-.activity-tab > div:nth-child(1) > img {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 50px;
-    height: 4em;
-    width: 4em;
-}
-
-.activity-tab > div:nth-child(2) {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 50px;
-}
-
-.activity-tab > .activity-left-tab > p {
+.activity-tab .activity-left-tab {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* border: 1px solid red; */
+}
+
+.activity-tab .activity-left-tab img {
+    width: 4rem;
+    height: 4rem;
+}
+
+.activity-tab .activity-left-tab p {
+    font-weight: 700;
+    font-size: 20px;
+    /* border: 1px solid red; */
+}
+
+.activity-tab .activity-right-tab.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.activity-tab .activity-right-tab.detail p {
     font-weight: 700;
     font-size: 20px;
 }
 
-.activity-tab > .activity-right-tab > .detail > p {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 700;
-    font-size: 20px;
-}
-
-.activity-tab > .activity-right-tab > .detail > span {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.activity-tab .activity-right-tab.detail span {
     font-size: 20px;
 }
 
@@ -103,31 +99,47 @@
 @media screen and (max-width: 600px) {
     .activity-card {
         width: 100%;
-        height: auto;
         border: 1px solid transparent;
     }
 
     .activity-card .header {
         margin: 30px auto;
-        width: 90%;
+        width: 85%;
         padding-top: 10px;
+        /* border: 1px solid red; */
     }
 
     .activity-card-detail {
-        width: 90%;
-        margin: 0 auto;
+        width: 85%;
+        margin: 0 auto 25px;
+        /* border: 1px solid red; */
     }
 
     .activity-tab {
         width: 98%;
-        margin: 20px auto;
+        margin: 15px auto;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-left: 15px;
+        padding-right: 25px;
+        gap: 20px;
+        /* border: 1px solid red; */
     }
 
-    .activity-tab > .activity-right-tab > .detail > p {
-        font-size: 18px;
+    .activity-tab .activity-left-tab {
+        margin: 0 10px;
+    }
+
+    .activity-tab > div:nth-child(4) {
+        /* border: 1px solid red; */
+        margin: 0 15px;
+    }
+
+    /* .activity-tab > .activity-right-tab > .detail > p {
+        font-size: 15px;
     }
     
     .activity-tab > .activity-right-tab > .detail > span {
-        font-size: 18px;
-    }
+        font-size: 15px;
+    } */
 }
