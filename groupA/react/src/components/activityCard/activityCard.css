@@ -95,6 +95,14 @@
     font-size: 20px;
 }
 
+/* =============== MEDIA QUERIES (MEDIUM DEVICES) =============== */
+@media screen and (max-width: 1024px) {
+    .activity-card {
+        width: 90%;
+        border: 1px solid transparent;
+    }
+}
+
 /* =============== MEDIA QUERIES (SMALL DEVICES) =============== */
 @media screen and (max-width: 600px) {
     .activity-card {
