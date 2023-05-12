@@ -52,7 +52,7 @@ const CreateCard = function() {
                             <div className="input-box">
                                 <span className="details">Activity Type</span>
                                 <select className="minimal" placeholder="" required >
-                                    <option value="" > Please Select Item </option>
+                                    <option value="" > Please Select One... </option>
                                     <option value="run" >Walk</option>
                                     <option value="bicycle_ride" >Swim</option>
                                     <option value="swim" >Run</option>

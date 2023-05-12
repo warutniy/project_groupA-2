@@ -52,7 +52,7 @@ const EditCard = function() {
                             <div className="input-box">
                                 <span className="details">Activity Type</span>
                                 <select className="minimal" placeholder="" required >
-                                    <option value="" > Please Select Item </option>
+                                    <option value="" > Please Select One... </option>
                                     <option value="run" >Run</option>
                                     <option value="bicycle_ride" >Bicycle Ride</option>
                                     <option value="swim" >Swim</option>
