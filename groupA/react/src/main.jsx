@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from '../src/components/home/Home';
-import Login from '../src/components/login/Login';
-import Register from '../src/components/register/Register';
-import CreateCard from '../src/components/createCard/CreateCard';
-import EditCard from '../src/components/editCard/EditCard';
-import User_main from '../src/components/user/User_main';
-import EditProfile from '../src/components/editProfile/EditProfile';
+import Home_Page from '../src/pages/home_page/Home_Page';
+import Login_Page from '../src/pages/login_page/Login_Page';
+import Register_Page from '../src/pages/register_page/Register_Page';
+import CreateCard_Page from '../src/pages/createCard_page/CreateCard_Page';
+import EditCard_Page from '../src/pages/editCard_page/EditCard_Page';
+import Dashboard_Page from '../src/pages/dashboard_page/Dashboard_Page';
+import EditProfile_Page from './pages/editProfile_page/EditProfile_page';
 
 import {
   createBrowserRouter,
@@ -16,37 +16,37 @@ import {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <Home_Page />
   },
 
   {
     path: '/login',
-    element: <Login />
+    element: <Login_Page />
   },
 
   {
     path: '/register',
-    element: <Register />
+    element: <Register_Page />
   },
 
   {
     path: '/create_card',
-    element: <CreateCard />
+    element: <CreateCard_Page />
   },
 
   {
     path: '/edit_card',
-    element: <EditCard />
+    element: <EditCard_Page />
   },
 
   {
     path: '/dashboard',
-    element: <User_main />
+    element: <Dashboard_Page />
   },
 
   {
     path: '/edit_profile',
-    element: <EditProfile />
+    element: <EditProfile_Page />
   }
 ])
 

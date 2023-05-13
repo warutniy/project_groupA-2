@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import '../activityCard/activityCard.css';
 import walkImage from '../../assets/icon/walk.png';
+import swimImage from '../../assets/icon/swim.png';
+import runImage from '../../assets/icon/run.png';
+import bikeImage from '../../assets/icon/bike.png';
+import badmintonImage from '../../assets/icon/badminton.png';
  
 const ActivityCard = () => {
     
@@ -109,6 +113,6 @@ const ActivityCard = () => {
             ))}
         </div>
     );
-}
+};
 
-export default ActivityCard
+export default ActivityCard;

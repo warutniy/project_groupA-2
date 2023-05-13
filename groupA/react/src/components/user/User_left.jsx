@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../user/User_main.css";
 import manImage from '../../assets/icon/man.png';
 import walkImage from '../../assets/icon/walk.png';

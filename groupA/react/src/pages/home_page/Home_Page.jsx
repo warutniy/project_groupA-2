@@ -1,14 +1,14 @@
 import { React, useState, useEffect } from 'react';
-import Layout from '../layout/Layout';
+import Layout from '../../components/layout/Layout';
 import activity01 from '../../assets/ac-1.jpg';
 import activity02 from '../../assets/ac-2.jpg';
 import activity03 from '../../assets/ac-3.jpg';
 import activity04 from '../../assets/ac-4.jpg';
 import activity05 from '../../assets/ac-5.jpg';
-import '../home/home.css';
+import '../home_page/home.css';
 import { getUser } from "../../api/users.ts";
 
-const Home = function() {
+const Home_Page = function() {
   const [users, setUsers] = useState(null);
   const [username, setUsername] = useState(null);
   
@@ -200,4 +200,4 @@ const Home = function() {
   );
 };
 
-export default Home;
+export default Home_Page;
