@@ -3,13 +3,15 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
 
+const authenRouter = require('./api/authen/authen-router')
 
 // body-parser
 app.use(express.json())
+app.use('/authen', authenRouter)
 
 const start = async () => {
     await mongoose.connect(
-        '<your mongodb url>'
+        '<your mongo connection string>'
     ).then(()=> {
         console.log('connected')
     }).catch((err)=>{
