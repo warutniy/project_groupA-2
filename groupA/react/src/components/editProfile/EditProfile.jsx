@@ -1,7 +1,34 @@
 import React from 'react';
 import '../editProfile/editProfile.css';
+import { useEffect, useState } from 'react';
+import Dashboard_Page from '../../pages/dashboard_page/Dashboard_Page';
 
-const EditProfile = function() {
+const EditProfile = function () {
+    const [editMode, setEditMode] = useState(false);
+    const [DataArr, setDataArr] = useState([]);
+    const [DataProfile, setDataProfile] = useState({
+        firstname: "",
+        lastname: "",
+        height: "",
+        weight: "",
+        gender: "",
+    });
+
+    const handleEditClick = () => {
+        setEditMode(true);
+    };
+
+    const handleSaveClick = () => {
+        setEditMode(false);
+        setDataArr([...DataArr, DataProfile])
+    };
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setDataProfile({ ...DataProfile, [name]: value });
+    };
+
     return (
         <div className="wrapper profile">
             <span className="icon-close">
@@ -14,11 +41,19 @@ const EditProfile = function() {
                     <div className='profile-details'>
                         <div className="input-box">
                             <span className="details">First Name</span>
-                            <input type="text" placeholder="Enter your first name" required />
+                            <input type="text"
+                                placeholder="Enter your first name"
+                                value={DataProfile.firstname}
+                                onChange={handleChange}
+                                name="firstname" required />
                         </div>
                         <div className="input-box">
                             <span className="details">Last Name</span>
-                            <input type="text" placeholder="Enter your last name" required />
+                            <input type="text"
+                                placeholder="Enter your last name"
+                                value={DataProfile.lastname}
+                                onChange={handleChange}
+                                name="lastname" required />
                         </div>
                         <div className="input-box">
                             <span className="details">Birth Date</span>
@@ -26,7 +61,11 @@ const EditProfile = function() {
                         </div>
                         <div className="input-box">
                             <span className="details">Gender</span>
-                            <select className="minimal" placeholder="" required >
+                            <select className="minimal"
+                                placeholder=""
+                                value={DataProfile.gender}
+                                onChange={handleChange}
+                                name="gender" required >
                                 <option value="" > Please Select One... </option>
                                 <option value="Female" >Female</option>
                                 <option value="Male" >Male</option>
@@ -36,14 +75,22 @@ const EditProfile = function() {
                         </div>
                         <div className="input-box">
                             <span className="details">Height (kg)</span>
-                            <input type="number" placeholder="Enter your height" required />
+                            <input type="number"
+                                placeholder="Enter your height"
+                                value={DataProfile.height}
+                                onChange={handleChange}
+                                name="height" required />
                         </div>
                         <div className="input-box">
                             <span className="details">Weight (kg)</span>
-                            <input type="number" placeholder="Enter your weight" required />
+                            <input type="number"
+                                placeholder="Enter your weight"
+                                value={DataProfile.weight}
+                                onChange={handleChange}
+                                name="weight" required />
                         </div>
                     </div>
-                    <button type="submit" className="btn" >Submit</button>
+                    <button type="submit" className="btn" ><a href='/dashboard'>Submit</a></button>
                 </form>
             </div>
         </div>
