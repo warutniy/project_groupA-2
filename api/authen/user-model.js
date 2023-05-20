@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -10,16 +10,18 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    first_name: {
+    firstName: {
         type: String,
         required: true,
     },
-    last_name: {
+    lastName: {
         type: String,
         required: true,
     }
-}, {
-    collection: 'USER'
-})
+});
 
-module.exports = mongoose.model('USER', userSchema)
+// Crate Model
+const UserModel = mongoose.model("User", UserSchema);
+
+// Export Model for another file use
+module.exports = UserModel;
