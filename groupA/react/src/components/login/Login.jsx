@@ -1,7 +1,7 @@
 import React from 'react';
 import '../login/login.css';
 
-const Login = function({ login, onChangeEmail, onChangePassword }) {
+const Login = function({ onSubmitLogin, onChangeEmail, onChangePassword }) {
     return (
         <div className="wrapper login">
             <span className="icon-close">
@@ -10,7 +10,7 @@ const Login = function({ login, onChangeEmail, onChangePassword }) {
 
             <div className="form-box login">
                 <h2>Login</h2>
-                <form onSubmit={login} >
+                <form onSubmit={onSubmitLogin} >
                     <div className="input-box">
                         <span className="icon">
                             <ion-icon name="mail"></ion-icon>

@@ -6,17 +6,46 @@ import swimImage from '../../assets/icon/swim.png';
 import runImage from '../../assets/icon/run.png';
 import bikeImage from '../../assets/icon/bike.png';
 import badmintonImage from '../../assets/icon/badminton.png';
+import { useState, useEffect } from "react";
+import EditProfile from "../editProfile/EditProfile";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
-const User_left = function () {
+const User_left = function (prop) {
+
+  // add useState
+  const [profilePic, setProfilePic] = useState("./src/assets/icon/man.png");
+
+  // add handleProfilePicChange
+  const handleProfilePicChange = (event) => {
+    setProfilePic(URL.createObjectURL(event.target.files[0]));
+  };
+
+
   return (
     <div className="grid-left">
-      <img
-        src={manImage}
-        className="profile_pic"
-        alt="pic_man"
-      />
+      <div className="profile_pic">
+        <a href="#">
+          <img src={profilePic} alt="pic_man" />
+          <label htmlFor="profile_pic_upload" title="Upload Image">
+            <i className="fas fa-upload"></i>
+          </label>
+        </a>
+        <input
+          type="file"
+          id="profile_pic_upload"
+          accept="image/*"
+          onChange={handleProfilePicChange}
+          style={{ display: "none" }}
+        />
+      </div>
+
       <p className="name_user">Name Name</p>
       <p className="info_user">Age: 23 Weight: 60 kg Height: 178 cm</p>
+      <div className="EditUserBTN">
+        <button>
+          <a href="/edit_profile">Edit</a>
+        </button>
+      </div>
       <p className="stat_user">Goals & Stats</p>
       <div className="goals_user">
         <div className="activity_icons">
@@ -45,3 +74,4 @@ const User_left = function () {
 };
 
 export default User_left;
+

@@ -1,26 +1,14 @@
 import { React, useState, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
 import EditCard from '../../components/editCard/EditCard';
-import { getUser } from "../../api/users.ts";
+import Cookies from 'js-cookie';
 
 const EditCard_Page = function() {
 
-    const [users, setUsers] = useState(null);
-    const [username, setUsername] = useState(null);
+    const token = Cookies.get('TOKEN');
   
-    useEffect(() => {
-        const getUsers = async () => {
-            const users = await getUser();
-            const username = await users.username;
-            setUsers(users);
-            setUsername(username);
-        };
-
-        getUsers();
-    }, []);
-
     return (
-        <Layout username={username} >
+        <Layout token={token} >
             <EditCard />
         </Layout>
     );

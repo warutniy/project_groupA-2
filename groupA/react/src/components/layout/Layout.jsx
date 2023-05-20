@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from '../../components/nav/Navbar';
 
-const Layout = function({ children, username }) {
+const Layout = function({ children, token }) {
     return (
         <div>
-            <Navbar username={username} />
+            <Navbar token={token} />
             {children}
         </div>
     );

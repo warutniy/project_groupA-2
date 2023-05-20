@@ -6,12 +6,13 @@ import Register_Page from '../src/pages/register_page/Register_Page';
 import CreateCard_Page from '../src/pages/createCard_page/CreateCard_Page';
 import EditCard_Page from '../src/pages/editCard_page/EditCard_Page';
 import Dashboard_Page from '../src/pages/dashboard_page/Dashboard_Page';
-import EditProfile_Page from './pages/editProfile_page/EditProfile_page';
+import EditProfile_Page from './pages/editProfile_page/EditProfile_Page';
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import UserContext from '../src/contexts/UserContext';
 
 const router = createBrowserRouter([
   {
@@ -51,5 +52,7 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <UserContext>
+    <RouterProvider router={router} />
+  </UserContext>
 )
