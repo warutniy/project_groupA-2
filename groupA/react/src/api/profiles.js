@@ -11,5 +11,6 @@ const headers = {
 };
 
 export const create_profile = async (body) => await axios.post(`${SERVER}/profile/create_profile`, body, { headers });
+export const update_profile = async (body) => await axios.patch(`${SERVER}/profile/update_profile`, body, { headers });
 export const getProfile = async () => await axios.get(`${SERVER}/profile/getProfile`, { headers });
 export const getUser = async () => await axios.get(`${SERVER}/profile/getUser`, { headers });

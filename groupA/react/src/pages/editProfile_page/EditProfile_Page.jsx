@@ -3,6 +3,33 @@ import Layout from '../../components/layout/Layout';
 import EditProfile from '../../components/editProfile/EditProfile';
 import Cookies from 'js-cookie';
 import { AuthenContext } from '../../contexts/UserContext';
+import Joi from 'joi';
+
+const formSchema = Joi.object({
+    birthDate: Joi.date()
+        .iso()
+        .label('Birthdate')
+        .required(),
+
+    gender: Joi.string()
+        .valid('Female', 'Male', 'Other', 'Prefer not to Answer')
+        .label('Gender')
+        .required(),
+
+    height: Joi.number()
+        .integer()
+        .min(1)
+        .label('Height')
+        .required(),
+
+    weight: Joi.number()
+        .integer()
+        .min(1)
+        .label('Weight')
+        .required()
+});
+
+
 
 const EditProfile_Page = function() {
 
@@ -33,6 +60,24 @@ const EditProfile_Page = function() {
 
     const submitCreateProfile = async (event) => {
         event.preventDefault(); 
+
+        const { error } = formSchema.validate({ birthDate, gender, height, weight });
+        if (error) {
+            const message = error.details[0].message;
+            console.log(error.details);
+
+            if (message.toLowerCase().includes('birthdate')) {
+                return alert('Birthdate must be valid format');
+            }
+
+            if (message.toLowerCase().includes('gender')) {
+                return alert('Gender must be valid');
+            }
+
+            if (message.toLowerCase().includes('height') || message.toLowerCase().includes('weight')) {
+                return alert('Height or Weight must be number');
+            }
+        };
 
         try {
             const userCreateProfile = {

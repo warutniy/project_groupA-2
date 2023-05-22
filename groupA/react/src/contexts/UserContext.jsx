@@ -18,7 +18,7 @@ function AuthenContextProvider({ children }) {
     const defaultUser = {
         firstName: '',
         lastName: ''
-    }
+    };
 
     const [currentProfile, setCurrentProfile] = useState(defaultProfile);
     const [currentUser, setCurrentUser] = useState(defaultUser);
@@ -122,11 +122,23 @@ function AuthenContextProvider({ children }) {
     const createProfile = async (body) => {
 
         try {
-            const response = await ProfileAPI.create_profile(body);
-            console.log(response);
 
-            alert('Profile Created!');
-            location.href = '/dashboard';
+            const response = await ProfileAPI.getProfile();
+            const fetchedUser = response.data.user;
+
+            if (!fetchedUser) {
+                const response = await ProfileAPI.create_profile(body);
+                console.log(response);
+
+                alert(response.data.message);
+                location.href = '/dashboard';
+            } else {
+                const response = await ProfileAPI.update_profile(body);
+                console.log(response);
+                
+                alert(response.data.message);
+                location.href = '/dashboard';
+            };
             
         } catch (error) {
             console.log(error);
