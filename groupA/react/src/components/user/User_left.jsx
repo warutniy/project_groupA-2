@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import EditProfile from "../editProfile/EditProfile";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-const User_left = function (prop) {
+const User_left = function ({ user }) {
 
   // add useState
   const [profilePic, setProfilePic] = useState("./src/assets/icon/man.png");
@@ -39,8 +39,8 @@ const User_left = function (prop) {
         />
       </div>
 
-      <p className="name_user">Name Name</p>
-      <p className="info_user">Age: 23 Weight: 60 kg Height: 178 cm</p>
+      <p className="name_user">{user.firstName} {user.lastName}</p>
+      <p className="info_user">Age: {user.age} gender: {user.gender} Weight: {user.weight} kg Height: {user.height} cm</p>
       <div className="EditUserBTN">
         <button>
           <a href="/edit_profile">Edit</a>

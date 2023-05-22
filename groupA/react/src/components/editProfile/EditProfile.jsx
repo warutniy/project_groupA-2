@@ -1,7 +1,7 @@
 import React from 'react';
 import '../editProfile/editProfile.css';
 
-const EditProfile = function() {
+const EditProfile = function({ onSubmitCreateProfile, onChangeBirthDate, onChangeGender, onChangeHeight, onChangeWeight, user }) {
     return (
         <div className="wrapper profile">
             <span className="icon-close">
@@ -10,23 +10,23 @@ const EditProfile = function() {
 
             <div className="form-box profile">
                 <h2>Edit Profile</h2>
-                <form action="#">
+                <form onSubmit={onSubmitCreateProfile}>
                     <div className='profile-details'>
                         <div className="input-box">
                             <span className="details">First Name</span>
-                            <input type="text" placeholder="Enter your first name" required />
+                            <input type="text" value={user.firstName} placeholder="Enter your first name" disabled />
                         </div>
                         <div className="input-box">
                             <span className="details">Last Name</span>
-                            <input type="text" placeholder="Enter your last name" required />
+                            <input type="text" value={user.lastName} placeholder="Enter your last name" disabled />
                         </div>
                         <div className="input-box">
                             <span className="details">Birth Date</span>
-                            <input className="dateTime" type="date" placeholder="" required />
+                            <input className="dateTime" type="date" onChange={onChangeBirthDate} placeholder="" required />
                         </div>
                         <div className="input-box">
                             <span className="details">Gender</span>
-                            <select className="minimal" placeholder="" required >
+                            <select className="minimal" onChange={onChangeGender} placeholder="" required >
                                 <option value="" > Please Select One... </option>
                                 <option value="Female" >Female</option>
                                 <option value="Male" >Male</option>
@@ -36,11 +36,11 @@ const EditProfile = function() {
                         </div>
                         <div className="input-box">
                             <span className="details">Height (kg)</span>
-                            <input type="number" placeholder="Enter your height" required />
+                            <input type="number" onChange={onChangeHeight} placeholder="Enter your height" required />
                         </div>
                         <div className="input-box">
                             <span className="details">Weight (kg)</span>
-                            <input type="number" placeholder="Enter your weight" required />
+                            <input type="number" onChange={onChangeWeight} placeholder="Enter your weight" required />
                         </div>
                     </div>
                     <button type="submit" className="btn" >Submit</button>

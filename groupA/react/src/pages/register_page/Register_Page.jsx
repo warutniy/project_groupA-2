@@ -51,18 +51,20 @@ const Register_Page = () => {
 
     const handleChangeEmail = (event) => {
         setEmail(event.target.value);
-    }
+    };
 
     const handleChangePassword = (event) => {
         setPassword(event.target.value);
-    }
+    };
 
     const handleChangeConfirmPassword = function(event) {
         setConfirmPassword(event.target.value);
     };
+
     const handleChangeFirstName = function(event) {
         setfirstName(event.target.value);
     };
+    
     const handleChangeLastName = function(event) {
         setlastName(event.target.value);
     };

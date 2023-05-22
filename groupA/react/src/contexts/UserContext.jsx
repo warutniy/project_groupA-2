@@ -1,30 +1,84 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import * as AuthenAPI from '../api/users'; 
+import * as ProfileAPI from '../api/profiles';
 import Cookies from 'js-cookie';
 
 export const AuthenContext = createContext();
 
 function AuthenContextProvider({ children }) {
 
-    const [currentUser, setCurrentUser] = useState(null);
-    // const [initialLoading, setInitialLoading] = useState(true);
+    const defaultProfile = {
+        firstName: '',
+        lastName: '',
+        age: '',
+        weight: '',
+        height: ''
+    };
+
+    const defaultUser = {
+        firstName: '',
+        lastName: ''
+    }
+
+    const [currentProfile, setCurrentProfile] = useState(defaultProfile);
+    const [currentUser, setCurrentUser] = useState(defaultUser);
+
+    useEffect(() => {
+        const fetchProfile = async () => {
+            try {
+                const response = await ProfileAPI.getProfile();
+                const fetchedUser = response.data.user;
+
+                // set current user
+                if (fetchedUser) {
+                    setCurrentProfile(fetchedUser);
+                };
+             
+            } catch (error) {
+                console.log(error);
+            };
+        };
+
+        const fetchUser = async () => {
+            try {
+                const response = await ProfileAPI.getUser();
+                const fetchedUser = response.data.user;
+
+                // set current user
+                if (fetchedUser) {
+                    setCurrentUser(fetchedUser);
+                };
+
+            } catch (error) {
+                console.log(error);
+            };
+        };
+
+        const token = Cookies.get('TOKEN');
+        if (token) {
+            fetchProfile();
+            fetchUser();
+        };
+
+    }, []);
     
+    // AUTHEN
     const login = async (body) => {
 
         try {
 
             const response = await AuthenAPI.login(body);
-            const { user, token, message } = response.data;
+            const { token, message } = response.data;
 
             // set current user
-            setCurrentUser(user);
+            // setCurrentUser(null);
 
             // set token
             // localStorage.setItem('TOKEN', token);
             Cookies.set('TOKEN', token);
             
             alert(message);
-            location.href = '/'
+            location.href = '/dashboard'
 
         } catch (error) {
             console.log(error);
@@ -36,7 +90,7 @@ function AuthenContextProvider({ children }) {
     const logout = async () => {
 
         // set current user
-        setCurrentUser(null);
+        // setCurrentUser(null);
 
         // remove token
         Cookies.remove('TOKEN');
@@ -53,7 +107,7 @@ function AuthenContextProvider({ children }) {
             const response = await AuthenAPI.signup(body);
 
             // set current user
-            setCurrentUser(null);
+            // setCurrentUser(null);
 
             alert(response.data.message);
             location.href = '/login';
@@ -63,13 +117,30 @@ function AuthenContextProvider({ children }) {
             alert('Signup Failed!');
         };
     };
+
+    // PROFILE
+    const createProfile = async (body) => {
+
+        try {
+            const response = await ProfileAPI.create_profile(body);
+            console.log(response);
+
+            alert('Profile Created!');
+            location.href = '/dashboard';
+            
+        } catch (error) {
+            console.log(error);
+            alert('Create Profile Failed!');
+        };
+    };
     
     const handlers = {
+        currentProfile,
         currentUser,
-        // initialLoading,
         login,
         logout,
-        signup
+        signup,
+        createProfile
     };
     
     return (
@@ -78,8 +149,5 @@ function AuthenContextProvider({ children }) {
         </AuthenContext.Provider>
     );  
 };
-
-// ### CustomHook
-export const useAuth = () => useContext(AuthenContext);
 
 export default AuthenContextProvider;
