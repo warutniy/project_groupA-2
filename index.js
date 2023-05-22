@@ -10,8 +10,8 @@ const decodeMiddleware = require('./middleware/decode');
 const authenRouter = require('./api/authen/authen-router');
 const profileRouter = require("./api/profile/profile-router");
 
-const port = 3000;
-const ipAddress = "127.0.0.1";
+const port = process.env.VITE_BACKEND_PORT;
+const ipAddress = process.env.VITE_BACKEND_URL;
 const app = express();
 app.use(cors());
 app.use(cookieParser());
