@@ -82,7 +82,6 @@ class AuthenController {
                 email,
                 password
             } = req.body;
-            console.log(email, password);
 
             //validate email
             const isEmail = validator.isEmail(email);
@@ -97,14 +96,14 @@ class AuthenController {
 
             // check if email is not valid
             const foundUser = await UserModel.findOne({ email });
-            console.log(foundUser)
+            // console.log(foundUser)
             if (!foundUser) {
                 throw new Error('email is not valid');
             }; 
 
             // compare password
             const hashedPassword = foundUser.password;
-            console.log(hashedPassword);
+            // console.log(hashedPassword);
             const isCorrect = await bcrypt.compare(password, hashedPassword);
             if (!isCorrect) {
                 throw new Error('email or password is not correct');

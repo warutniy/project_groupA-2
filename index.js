@@ -6,7 +6,9 @@ dotenv.config();
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 
+const decodeMiddleware = require('./middleware/decode');
 const authenRouter = require('./api/authen/authen-router');
+const profileRouter = require("./api/profile/profile-router");
 
 const port = 3000;
 const ipAddress = "127.0.0.1";
@@ -21,6 +23,8 @@ app.get("/", (req, res) => {
     res.status(200).send("Hello Fitbook");
 });
 app.use('/authen', authenRouter);
+app.use(decodeMiddleware);
+app.use("/profile", profileRouter);
 // app.use('/activity', activityRouter);
 
 const connect = async () => {
