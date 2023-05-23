@@ -1,0 +1,73 @@
+import { createContext, useContext, useEffect, useState } from 'react';
+import * as ActivityAPI from '../api/activities';
+import Cookies from 'js-cookie';
+
+export const ActivityContext = createContext();
+
+function ActivityContextProvider({ children }) {
+
+    // const defaultActivity = [
+    //    {activityName: ''},
+    //     {date: ''},
+    //     {description: ''},
+    //     {startTime: ''},
+    //     {finishTime: ''},
+    //     {activityType: ''},
+    //     {duration: ''},
+    //    { distance: ''}
+    // ];
+
+    const [currentCard, setCurrentCard] = useState([]);
+
+    useEffect(() => {
+        const fetchActivity = async () => {
+            try {
+                const response = await ActivityAPI.getCard();
+                const fetchedUser = response.data.user;
+
+                // set current user
+                if (fetchedUser) {
+                    setCurrentCard(fetchedUser);
+                };
+             
+            } catch (error) {
+                console.log(error);
+            };
+        };
+
+        const token = Cookies.get('TOKEN');
+        if (token) {
+            fetchActivity();
+            // fetchUser();
+        };
+    }, []);
+
+    // Activity Card
+    const createCard = async (body) => {
+
+        try {
+            const response = await ActivityAPI.create_card(body);
+            console.log(response);
+
+            alert('Activity Card Created!');
+            location.href = '/dashboard';
+            
+        } catch (error) {
+            console.log(error);
+            alert('Create Activity Card Failed!');
+        };
+    };
+
+    const handlers = {
+        currentCard,
+        createCard
+    };
+    
+    return (
+        <ActivityContext.Provider value={handlers}>
+            {children}
+        </ActivityContext.Provider>
+    );  
+};
+
+export default ActivityContextProvider;
