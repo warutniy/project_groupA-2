@@ -30,7 +30,7 @@
 .grid-left {
     display: flex;
     flex-direction: column;
-    height: auto;    
+    height: auto;
     width: 100%;
     margin: 0 auto;
     /* border: 1px solid red; */
@@ -62,24 +62,24 @@
 }
 
 .profile_pic:hover label {
-      display: block;
-      /* show the label when hovering over the profile_pic div */
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      display: none;
-      background-color: rgba(0, 0, 0, 0.6);
-      cursor: pointer;
-      z-index: 1;
-      /* added styles to center the element */
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    display: block;
+    /* show the label when hovering over the profile_pic div */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    z-index: 1;
+    /* added styles to center the element */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.grid-main .name_user{
+.grid-main .name_user {
     /* justify-content: center; */
     text-align: center;
     font-size: 1.5rem;
@@ -115,14 +115,14 @@
     align-items: center;
 }
 
-.activity_icons > img{
+.activity_icons>img {
     margin: 10px;
     height: 40px;
     width: 40px;
     margin-left: 16px;
 }
 
-.activity_icons > p{
+.activity_icons>p {
     font-size: 1rem;
     padding-left: 15px;
     padding-top: 15px;
@@ -148,7 +148,7 @@ a {
     text-decoration: none;
 }
 
-.EditUserBTN > button {
+.EditUserBTN>button {
     width: 20%;
     height: 30px;
     margin: 10px 0 10px 0;
@@ -162,10 +162,10 @@ a {
     color: #fff;
     font-weight: 500;
     transition: scale 0.2 ease;
-    
+
 }
 
-.EditUserBTN > button:hover {
+.EditUserBTN>button:hover {
     background-color: rgba(112, 103, 174, 0.9);
     scale: 1.01;
 }
@@ -249,7 +249,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 /* =============== MEDIA QUERIES (MEDIUM DEVICES) =============== */
