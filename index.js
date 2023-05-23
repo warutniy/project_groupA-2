@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const decodeMiddleware = require('./middleware/decode');
 const authenRouter = require('./api/authen/authen-router');
 const profileRouter = require("./api/profile/profile-router");
+const activityRouter = require("./api/activity/activity-router");
 
 const port = process.env.VITE_BACKEND_PORT;
 const ipAddress = process.env.VITE_BACKEND_URL;
@@ -25,7 +26,7 @@ app.get("/", (req, res) => {
 app.use('/authen', authenRouter);
 app.use(decodeMiddleware);
 app.use("/profile", profileRouter);
-// app.use('/activity', activityRouter);
+app.use('/activity', activityRouter);
 
 const connect = async () => {
 
