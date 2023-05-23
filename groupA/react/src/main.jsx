@@ -13,6 +13,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import UserContext from '../src/contexts/UserContext';
+import ActivityContext from '../src/contexts/ActivityContext';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <UserContext>
-    <RouterProvider router={router} />
+    <ActivityContext>
+      <RouterProvider router={router} />
+    </ActivityContext>
   </UserContext>
-)
+);

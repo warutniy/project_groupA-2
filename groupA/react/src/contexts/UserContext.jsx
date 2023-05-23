@@ -129,13 +129,13 @@ function AuthenContextProvider({ children }) {
 
             if (!fetchedUser) {
                 const response = await ProfileAPI.create_profile(body);
-                console.log(response);
+                // console.log(response);
 
                 alert(response.data.message);
                 location.href = '/dashboard';
             } else {
                 const response = await ProfileAPI.update_profile(body);
-                console.log(response);
+                // console.log(response);
                 
                 alert(response.data.message);
                 location.href = '/dashboard';

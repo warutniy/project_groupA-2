@@ -44,11 +44,11 @@ const EditProfile = function({ onSubmitCreateProfile, onChangeBirthDate, onChang
                         </div>
                         <div className="input-box">
                             <span className="details">{`Height (kg) ${height && `: ${height}`}`}</span>
-                            <input type="number" onChange={onChangeHeight} placeholder="Enter your height" required />
+                            <input type="number" step=".01" onChange={onChangeHeight} placeholder="Enter your height" required />
                         </div>
                         <div className="input-box">
                             <span className="details">{`Weight (kg) ${weight && `: ${weight}`}`}</span>
-                            <input type="number" onChange={onChangeWeight} placeholder="Enter your weight" required />
+                            <input type="number" step=".01" onChange={onChangeWeight} placeholder="Enter your weight" required />
                         </div>
                     </div>
                     <button type="submit" className="btn" >Submit</button>

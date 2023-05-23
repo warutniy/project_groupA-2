@@ -1,6 +1,6 @@
 import React from "react";
 import "../user/User_main.css";
-import manImage from '../../assets/icon/man.png';
+// import manImage from '../../assets/icon/man.png';
 import walkImage from '../../assets/icon/walk.png';
 import swimImage from '../../assets/icon/swim.png';
 import runImage from '../../assets/icon/run.png';
@@ -9,11 +9,13 @@ import badmintonImage from '../../assets/icon/badminton.png';
 import { useState, useEffect } from "react";
 import EditProfile from "../editProfile/EditProfile";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import userDefaultimage from '../../assets/icon/user-default.png';
 
-const User_left = function ({ user }) {
+const User_left = function ({ profile, user }) {
 
   // add useState
-  const [profilePic, setProfilePic] = useState("./src/assets/icon/man.png");
+  // const [profilePic, setProfilePic] = useState("./src/assets/icon/man.png");
+  const [profilePic, setProfilePic] = useState(userDefaultimage);
 
   // add handleProfilePicChange
   const handleProfilePicChange = (event) => {
@@ -40,7 +42,7 @@ const User_left = function ({ user }) {
       </div>
 
       <p className="name_user">{user.firstName} {user.lastName}</p>
-      <p className="info_user">Age: {user.age} gender: {user.gender} Weight: {user.weight} kg Height: {user.height} cm</p>
+      <p className="info_user">Age: {profile.age} gender: {profile.gender} Weight: {profile.weight} kg Height: {profile.height} cm</p>
       <div className="EditUserBTN">
         <button>
           <a href="/edit_profile">Edit</a>

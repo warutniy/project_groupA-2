@@ -78,7 +78,7 @@ const Register_Page = () => {
             console.log(error.details);
 
             if (message.toLowerCase().includes('first name') || message.toLowerCase().includes('last name')) {
-                return alert('First Name or Last Name must have length at least 6 characters');
+                return alert('First Name or Last Name must have length at least 3 characters');
             }
 
             if (message.toLowerCase().includes('email')) {

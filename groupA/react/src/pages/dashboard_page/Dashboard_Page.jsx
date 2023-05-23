@@ -5,18 +5,20 @@ import User_middle from "../../components/user/User_middle";
 import User_right from '../../components/user/User_right';
 import Cookies from 'js-cookie';
 import { AuthenContext } from '../../contexts/UserContext';
+import { ActivityContext } from '../../contexts/ActivityContext';
 
 const Dashboard_Page = () => {
 
     const token = Cookies.get('TOKEN');
 
-    const { currentProfile } = useContext(AuthenContext);
+    const { currentUser, currentProfile } = useContext(AuthenContext);
+    const { currentCard } = useContext(ActivityContext);
 
     return (
         <Layout token={token} >
             <div className="grid-main">
-                <User_left user={currentProfile} />
-                <User_middle />
+                <User_left profile={currentProfile} user={currentUser} />
+                <User_middle card={currentCard} />
                 <User_right />
             </div>
         </Layout>

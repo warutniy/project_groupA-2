@@ -17,13 +17,13 @@ const formSchema = Joi.object({
         .required(),
 
     height: Joi.number()
-        .integer()
+        .precision(2)
         .min(1)
         .label('Height')
         .required(),
 
     weight: Joi.number()
-        .integer()
+        .precision(2)
         .min(1)
         .label('Weight')
         .required()
