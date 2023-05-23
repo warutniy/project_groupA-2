@@ -35,7 +35,7 @@ const EditProfile_Page = function() {
 
     const token = Cookies.get('TOKEN');
 
-    const { currentUser, createProfile } = useContext(AuthenContext);
+    const { currentUser, currentProfile, createProfile } = useContext(AuthenContext);
 
     const [birthDate, setBirthDate] = useState('');
     const [gender, setGender] = useState('');
@@ -103,6 +103,7 @@ const EditProfile_Page = function() {
                 onChangeHeight={handleChangeHeight}
                 onChangeWeight={handleChangeWeight}
                 user={currentUser}
+                profile={currentProfile}
             />
         </Layout>
     );

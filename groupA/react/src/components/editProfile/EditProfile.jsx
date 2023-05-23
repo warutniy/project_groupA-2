@@ -1,7 +1,15 @@
-import React from 'react';
+import { React} from 'react';
 import '../editProfile/editProfile.css';
 
-const EditProfile = function({ onSubmitCreateProfile, onChangeBirthDate, onChangeGender, onChangeHeight, onChangeWeight, user }) {
+const EditProfile = function({ onSubmitCreateProfile, onChangeBirthDate, onChangeGender, onChangeHeight, onChangeWeight, user, profile }) {
+
+    const {
+        birthDate,
+        gender,
+        height,
+        weight
+    } = profile;
+
     return (
         <div className="wrapper profile">
             <span className="icon-close">
@@ -21,11 +29,11 @@ const EditProfile = function({ onSubmitCreateProfile, onChangeBirthDate, onChang
                             <input type="text" value={user.lastName} placeholder="Enter your last name" disabled />
                         </div>
                         <div className="input-box">
-                            <span className="details">Birth Date</span>
+                            <span className="details">{`Birth Date ${birthDate.split('T')[0] && `: ${birthDate.split('T')[0]}` || "" }`}</span>
                             <input className="dateTime" type="date" onChange={onChangeBirthDate} placeholder="" required />
                         </div>
                         <div className="input-box">
-                            <span className="details">Gender</span>
+                            <span className="details">{`Gender ${gender && `: ${gender}` || "" }`}</span>
                             <select className="minimal" onChange={onChangeGender} placeholder="" required >
                                 <option value="" > Please Select One... </option>
                                 <option value="Female" >Female</option>
@@ -35,11 +43,11 @@ const EditProfile = function({ onSubmitCreateProfile, onChangeBirthDate, onChang
                             </select>
                         </div>
                         <div className="input-box">
-                            <span className="details">Height (kg)</span>
+                            <span className="details">{`Height (kg) ${height && `: ${height}`}`}</span>
                             <input type="number" onChange={onChangeHeight} placeholder="Enter your height" required />
                         </div>
                         <div className="input-box">
-                            <span className="details">Weight (kg)</span>
+                            <span className="details">{`Weight (kg) ${weight && `: ${weight}`}`}</span>
                             <input type="number" onChange={onChangeWeight} placeholder="Enter your weight" required />
                         </div>
                     </div>

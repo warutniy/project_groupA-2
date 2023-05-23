@@ -10,6 +10,7 @@ function AuthenContextProvider({ children }) {
     const defaultProfile = {
         firstName: '',
         lastName: '',
+        birthDate: '',
         age: '',
         weight: '',
         height: ''
