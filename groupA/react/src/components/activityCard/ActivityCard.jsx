@@ -38,7 +38,8 @@ const ActivityCard = ({ card }) => {
                     <div className='header'>
                         <h2 className='activity-name'>{item.firstName} {item.lastName}</h2>
                         <span className="icon">
-                        <a href='/edit_card'><ion-icon color="primary" size="large" name="create-outline"></ion-icon></a>
+                        <a href={`/edit_card/${item._id}`}><ion-icon color="primary" size="large" name="create-outline"></ion-icon></a>
+                        {/* <a href="/edit_card"><ion-icon color="primary" size="large" name="create-outline"></ion-icon></a> */}
                         <ion-icon color="danger" size="large" name="trash-outline"></ion-icon>
                         </span>
                     </div>

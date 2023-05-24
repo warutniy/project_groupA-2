@@ -46,9 +46,25 @@ function ActivityContextProvider({ children }) {
         };
     };
 
+    const editCard = async (activityID, body) => {
+
+        try {
+            const response = await ActivityAPI.edit_card(activityID, body);
+            console.log(response);
+
+            alert(response.data.message);
+            location.href = '/dashboard';
+            
+        } catch (error) {
+            console.log(error);
+            alert('Edit Activity Card Failed!');
+        };
+    };
+
     const handlers = {
         currentCard,
-        createCard
+        createCard,
+        editCard
     };
     
     return (
