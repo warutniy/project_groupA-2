@@ -12,13 +12,44 @@ const Dashboard_Page = () => {
     const token = Cookies.get('TOKEN');
 
     const { currentUser, currentProfile } = useContext(AuthenContext);
-    const { currentCard } = useContext(ActivityContext);
+    const { currentCard, deleteCard } = useContext(ActivityContext);
+
+    const [ newCard, setNewCard ] = useState([]);
+
+    useEffect(() => {
+            setNewCard(currentCard);
+    }, [currentCard]);
+
+    console.log(newCard);
+
+    const deleteActivityById = (id) => {
+        const newActivityCard = newCard.filter((item) => item._id !== id);
+        setNewCard(newActivityCard);
+    };
+
+    const handleDelete = async (id) => {
+        
+        try {
+            if (window.confirm('Are you sure to delete ?')) {
+                await deleteCard(id);
+            };
+            deleteActivityById(id);
+        } catch(error) {
+            console.log(error);
+        };
+    };
 
     return (
         <Layout token={token} >
             <div className="grid-main">
-                <User_left profile={currentProfile} user={currentUser} />
-                <User_middle card={currentCard} />
+                <User_left 
+                    profile={currentProfile} 
+                    user={currentUser} 
+                />
+                <User_middle 
+                    card={newCard} 
+                    onDelete={handleDelete}
+                />
                 <User_right />
             </div>
         </Layout>

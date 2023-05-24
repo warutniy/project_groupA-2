@@ -37,7 +37,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/edit_card',
+    path: '/edit_card/:activityID',
     element: <EditCard_Page />
   },
 

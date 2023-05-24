@@ -32,6 +32,13 @@
     /* border: 1px solid red; */
 }
 
+.activity-card > .header span button {
+    /* border: 1px solid red; */
+    border-color: transparent;
+    background-color: transparent;
+    margin-left: 20px;
+}
+
 .activity-card-detail {
     margin: 30px 50px 25px;
 }
