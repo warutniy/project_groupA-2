@@ -1,7 +1,7 @@
 import React from 'react';
 import '../createCard/createCard.css';
 
-const CreateCard = function({ onSubmitCreateCard, onChangeActivityName, onChangeDate, onChangeDescription, onChangeStartTime, onChangeFinishTime, onChangeActivityType, onChangeDistance }) {
+const CreateCard = function({ onSubmitCreateCard, onChangeActivityName, onChangeDate, onChangeDescription, onChangeStartTime, onChangeFinishTime, onChangeActivityType, onChangeDistance, activityType }) {
     return (
         <div className="wrapper create_card">
             <span className="icon-close">
@@ -43,10 +43,20 @@ const CreateCard = function({ onSubmitCreateCard, onChangeActivityName, onChange
                                 <option value="Badminton" >Badminton</option>
                             </select>
                         </div>
-                        <div className="input-box">
-                            <span className="details">Distance (km)</span>
-                            <input type="number" step=".01" onChange={onChangeDistance} placeholder="Enter your distance" required />
-                        </div>
+                        {
+                            activityType === "Badminton" && 
+                            <div className="input-box">
+                                <span className="details">Distance (km)</span>
+                                <input type="number" step=".01" onChange={onChangeDistance} value={0} disabled required />
+                            </div>
+                        }
+                        {
+                            activityType !== "Badminton" && 
+                            <div className="input-box">
+                                <span className="details">Distance (km)</span>
+                                <input type="number" step=".01" onChange={onChangeDistance} placeholder="Enter your distance" required />
+                            </div>
+                        }
                     </div>
                     <button type="submit" className="btn" >Create Card</button>
                 </form>

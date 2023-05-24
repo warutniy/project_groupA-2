@@ -39,9 +39,6 @@ function ActivityContextProvider({ children }) {
 
             alert(response.data.message);
             location.href = '/dashboard';
-
-            // alert('Activity Card Created!');
-            // location.href = '/dashboard';
             
         } catch (error) {
             console.log(error);

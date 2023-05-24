@@ -37,7 +37,7 @@ const formSchema = Joi.object({
     distance: Joi.number()
         .precision(2)
         .label('Distance')
-        .required(),
+        .required()
 });
 
 const CreateCard_Page = function() {
@@ -52,35 +52,41 @@ const CreateCard_Page = function() {
     const [startTime, setStartTime] = useState();
     const [finishTime, setFinishTime] = useState();
     const [activityType, setActivityType] = useState();
-    const [distance, setDistance] = useState();
+    const [distance, setDistance] = useState(0);
 
     const handleChangeActivityName = (event) => {
         setActivityName(event.target.value);
-    }
+    };
 
     const handleChangeDate = (event) => {
         setDate(event.target.value);
-    }
+    };
 
     const handleChangeDescription = (event) => {
         setDescription(event.target.value);
-    }
+    };
 
     const handleChangeStartTime = (event) => {
         setStartTime(event.target.value);
-    }
+    };
 
     const handleChangeFinishTime = (event) => {
         setFinishTime(event.target.value);
-    }
+    };
 
-    const handleChangeActivityType = (event) => {
+    const handleChangeActivityType = (event) => {  
         setActivityType(event.target.value);
-    }
+    };
 
     const handleChangeDistance = (event) => {
         setDistance(event.target.value);
-    }
+    };
+
+    useEffect(() => {
+        if (activityType === "Badminton") {
+            setDistance(0);
+        };
+    }, [activityType]);
 
     const submitCreateCard = async (event) => {
         event.preventDefault(); 
@@ -128,6 +134,9 @@ const CreateCard_Page = function() {
         };
     };
 
+    // console.log(activityType);
+    // console.log(distance);
+
     return (
         <Layout token={token} >
             <CreateCard 
@@ -139,6 +148,7 @@ const CreateCard_Page = function() {
                 onChangeFinishTime={handleChangeFinishTime}
                 onChangeActivityType={handleChangeActivityType}
                 onChangeDistance={handleChangeDistance}
+                activityType={activityType}
             />
         </Layout>
     );
